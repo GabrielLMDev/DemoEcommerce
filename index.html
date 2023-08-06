@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="Tooplate">
+
+    <title>Demo Tienda E-commmerce - GabrielLM Dev</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/tooplate-moso-interior.css" rel="stylesheet">
+    
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
+        <div class="container">
+            <img src="assets/images/LogoWBG.png" style="width: 4.5%;">
+            <a class="navbar-brand" href="index.html">Demo E<span class="tooplate-secondary">-</span><span
+                    class="tooplate-custom">commmerce</span></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_1">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_2">Acerca de</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle  " id="navbarLightDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Catálogo</a>
+
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                            <li><a class="dropdown-item" href="shop-listing.html">Shop Listing</a></li>
+
+                            <li><a class="dropdown-item" href="shop-detail.html">Shop Detail</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_4">Opiniones</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-section hero-slide d-flex justify-content-center align-items-center" id="section_1">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 text-center mx-auto">
+                        <div class="hero-section-text">
+                            <small class="section-small-title">Bienvenido a Demo-Ecommerce<i
+                                    class="hero-icon bi-house"></i></small>
+                            <!--
+                            <h2 class="hero-title mt-2 mb-4">Las mejores ofertas.
+                            </h2>-->
+                            <img src="assets/images/LogoWBG.png" style="width: 25%;">
+                            <form class="custom-form hero-form" action="#" m%ethod="get" role="form">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-6 col-12">
+                                        <div class="input-group align-items-center">
+                                            <label for="product-name">Product</label>
+
+                                            <input type="text" name="product-name" id="product-name"
+                                                class="form-control" placeholder="Bathroom, Living Room..." required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-5 col-md-6 col-12">
+                                        <div class="input-group align-items-center">
+                                            <label for="last-name">Price</label>
+
+                                            <select name="price-range" class="form-select form-control" id="price-range"
+                                                aria-label="Default select example">
+                                                <option value="500" selected>$500 to $990</option>
+                                                <option value="1000">$1,000 - 2,900</option>
+                                                <option value="3000">$3,000 - 5,000</option>
+                                                <option value="5000">$5,000 - 10,000</option>
+                                                <option value="11000">$11,000 - 25,000</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-6 col-12">
+                                        <button type="submit" class="form-control">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="hero-btn d-flex justify-content-center align-items-center">
+                                <a class="bi-arrow-down hero-btn-link smoothscroll" href="#products"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="shop-section section-padding" style="margin-bottom: 1px; padding-top: 30px;" id="products">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12">
+                        <small class="section-small-title">Recientes</small>
+
+                        <h2 class="mt-2 mb-4"><span class="tooplate-secondary">Lo más</span> Nuevo</h2>
+                    </div>
+                    <div id="products-index" class="row"></div>
+
+                    <div class="col-lg-12 col-12">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+
+                                <li class="page-item active" aria-current="page">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+
+                                <li class="page-item">
+                                    <a class="page-link" href="#">4</a>
+                                </li>
+
+                                <li class="page-item">
+                                    <a class="page-link" href="#">5</a>
+                                </li>
+
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section section-padding" id="section_2" style="padding-top: 30px;">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-5 col-12">
+                        <small class="section-small-title">¿Quien soy?</small>
+
+                        <h2 class="mt-2 mb-4"><span class="text-muted">Soy un</span> DEMO</h2>
+
+                        <h4 class="text-muted mb-3">Adaptado por GabrielLMDev desde Julio 2023 por Toolplate.com</h4>
+
+                        <p>Soy más que una página web; soy la herramienta que llevará tus sueños empresariales a la
+                            realidad digital. ¿Listo para dar el primer paso hacia una presencia en línea sorprendente y
+                            efectiva? Juntos, conquistaremos el mundo digital y crearemos una impresión duradera en tus
+                            clientes. ¡Conóceme y descubre cómo puedo transformar tu negocio hoy mismo!</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-5 col-5 mx-lg-auto">
+                        <img src="assets/images/LogoWBG.png" class="about-image about-image-small img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-7 col-7">
+                        <img src="assets/images/avatar.jpg" class="about-image img-fluid" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-section section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-5 col-12">
+                        <div class="custom-block featured-custom-block">
+                            <h2 class="mt-2 mb-4">Horarios de Atención</h2>
+
+                            <div class="d-flex">
+                                <i class="featured-icon bi-clock me-3"></i>
+
+                                <div>
+                                    <p class="mb-2">
+                                        Lun - Viernes ~
+                                        <strong class="d-inline">
+                                            8:00 AM - 6:00 PM
+                                        </strong>
+                                    </p>
+
+                                    <p class="mb-2">
+                                        Sabado ~
+                                        <strong class="d-inline">
+                                            10:00 AM - 05:00 PM
+                                        </strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-section section-padding pb-0" id="section_4">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12">
+                        <small class="section-small-title">Nuestros clientes tienen la ultima palabra.</small>
+
+                        <h2 class="mt-2 mb-4">Opiniones</h2>
+
+                        <div class="owl-carousel reviews-carousel">
+                            <div class="reviews-thumb">
+                                <div class="reviews-body">
+                                    <h4>Ejemplo.</h4>
+                                </div>
+
+                                <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                    <img src="images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg"
+                                        class="avatar-image img-fluid" alt="">
+
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                        <p class="text-white mb-0">
+                                            <strong>Sandy</strong>, <small>CEO</small>
+                                        </p>
+
+                                        <div class="reviews-icons">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reviews-thumb">
+                                <div class="reviews-body">
+                                    <h4>Ejemplo.</h4>
+                                </div>
+
+                                <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                    <img src="images/avatar/studio-portrait-emotional-happy-funny-smiling-boyfriend-man-with-heavy-beard-stands-with-arms-crossed-dressed-red-t-shirt-isolated-blue.jpg"
+                                        class="avatar-image img-fluid" alt="">
+
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                        <p class="text-white mb-0">
+                                            <strong>Jack</strong>, <small>Partner</small>
+                                        </p>
+
+                                        <div class="reviews-icons">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star"></i>
+                                            <i class="bi-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reviews-thumb">
+                                <div class="reviews-body">
+                                    <h4>Ejemplo.</h4>
+                                </div>
+
+                                <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                    <img src="images/avatar/portrait-beautiful-young-woman-standing-grey-wall.jpg"
+                                        class="avatar-image img-fluid" alt="">
+
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                        <p class="text-white mb-0">
+                                            <strong>Helen</strong>, <small>Client</small>
+                                        </p>
+
+                                        <div class="reviews-icons">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reviews-thumb">
+                                <div class="reviews-body">
+                                    <h4>Ejemplo.</h4>
+                                </div>
+
+                                <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                    <img src="images/avatar/portrait-young-redhead-bearded-male-wears-white-t-shirt-keeps-his-eyes-closed-smiling-feels-happy-yellow.jpg"
+                                        class="avatar-image img-fluid" alt="">
+
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                        <p class="text-white mb-0">
+                                            <strong>Bill</strong>, <small>Designer</small>
+                                        </p>
+
+                                        <div class="reviews-icons">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star"></i>
+                                            <i class="bi-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reviews-thumb">
+                                <div class="reviews-body">
+                                    <h4>Ejemplo.</h4>
+                                </div>
+
+                                <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                    <img src="images/avatar/portrait-young-beautiful-woman-gesticulating.jpg"
+                                        class="avatar-image img-fluid" alt="">
+
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                        <p class="text-white mb-0">
+                                            <strong>Susan</strong>, <small>Boss</small>
+                                        </p>
+
+                                        <div class="reviews-icons">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-12">
+                            <p class="d-flex justify-content-center align-items-center mt-lg-5">Dejanos saber tu opinion
+                                <a href="#" class="custom-btn btn ms-3"><i class="bi-facebook me-2"></i>facebook</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-md-5 col-12 mb-3">
+                    <h3><a href="index.html" class="custom-link mb-1">Demo E-commerce</a></h3>
+
+                    <p class="text-white">Julio 2023, Adaptado por: <a class="text-white"
+                            href="https://www.gabriellmdev.com/" target="_blank">GabrielLMDev</a>
+                    </p>
+                    <p class="text-white">Template By Tooplate: <a class="text-white" href="https://www.tooplate.com/"
+                            target="_blank">Tooplate.com</a>
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 ms-lg-auto mb-3">
+                    <h3 class="text-white mb-3">Tienda</h3>
+
+                    <p class="text-white mt-2">
+                        <i class="bi-geo-alt"></i>
+                        México, México
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 ms-lg-auto mb-3">
+                    <h3 class="text-white mb-3">Conócenos</h3>
+                    <p class="text-white"><a class="text-white" href="#" target="_self">Politicas de Privacidad</a>
+                    </p>
+                    <p class="text-white"><a class="text-white" href="#" target="_self">Acerca de nosotros</a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-12 mb-3">
+                    <h3 class="text-white mb-3">Contáctanos</h3>
+
+                    <p class="text-white mb-1">
+                        <i class="bi-telephone me-1"></i>
+
+                        <a href="tel: +52-55-47608999" class="text-white">
+                            +52-55-47608999
+                        </a>
+                    </p>
+
+                    <p class="text-white mb-0">
+                        <i class="bi-envelope me-1"></i>
+
+                        <a href="mailto:gabriellm.contacto@gmail.com" class="text-white">
+                            gabriellm.contacto
+                        </a>
+                    </p>
+                </div>
+
+                <div>
+                    <p class="copyright-text mb-0 me-4">Copyright © Demo E-commerce 2023</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script type="module" src="/js/index.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
