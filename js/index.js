@@ -17,7 +17,7 @@ const productsRef = collection(db, "products");
 
 //const q = query(collection(db, "products"), where("estatus", "==", true)); / DISPONIBLES
 //const q = query(productsRef, orderBy("fecha", "desc"), limit(3)); // ASCENDENTE
-const q = query(productsRef, orderBy("fecha"), limit(4));
+const q = query(productsRef, orderBy("fecha"),limit(6));
 const querySnapshot = await getDocs(q);
 querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
