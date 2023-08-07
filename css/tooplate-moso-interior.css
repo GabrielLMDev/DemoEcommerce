@@ -499,7 +499,7 @@ strong {
   SITE HEADER              
 -----------------------------------------*/
 .site-header {
-  background-image: url('../images/empty-living-room-with-blue-sofa-plants-table-empty-white-wall-background-3d-rendering.jpg');
+  background-image: url('../images/slideshow/Unsplash3.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -784,6 +784,7 @@ strong {
   bottom: 0;
   left: 0;
   margin: 10px 10px 10px 10px;
+  padding-top: 5px;
 }
 .shop-body-text{
   color: var(--custom-btn-bg-color);

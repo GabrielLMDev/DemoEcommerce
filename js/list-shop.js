@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
-import { getFirestore, doc, getDocs, collection, query, where, orderBy, limit } from "https://cdnjs.cloudflare.com/ajax/libs/firebase/10.1.0/firebase-firestore.min.js";
+import { getFirestore, doc, getDocs, collection, query, where, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js";
 const firebaseConfig = {
     apiKey: "AIzaSyCrwTZzWvz_mAvDsczAYaa_6b8yh7j3vww",
@@ -15,20 +15,24 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const analytics = getAnalytics(app);
 const productsRef = collection(db, "products");
+var dots = 0;
 
 //const q = query(collection(db, "products"), where("estatus", "==", true)); / DISPONIBLES
 //const q = query(productsRef, orderBy("fecha", "desc"), limit(3)); // ASCENDENTE
-const q = query(productsRef, orderBy("fecha","desc"), limit(6));
+const q = query(productsRef, orderBy("fecha", "desc"));
 const querySnapshot = await getDocs(q);
 querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
-
-    const padre = document.getElementById("products-index");
+    const total = document.getElementById("total");
+    total.innerHTML = querySnapshot.docs.length + " productos";
+    var aux = querySnapshot.docs.length / 4;
+    dots = Math.floor(aux);
+    const padre = document.getElementById("products");
     const hijo = document.createElement("div");
-    hijo.classList.add("col-lg-4");
-    hijo.classList.add("col-12");
-
+    hijo.classList.add("product");
+    hijo.style.width = 'calc(50% - 10px)';
+    hijo.style.padding = '10px';
+    hijo.style.boxSizing = 'border-box';
+    hijo.style.display = 'none';
     const storage = getStorage(app);
     getDownloadURL(ref(storage, 'productos/' + doc.id + '.jpg'))
         .then((url) => {
@@ -96,3 +100,50 @@ querySnapshot.forEach((doc) => {
         padre.appendChild(hijo);
     }
 });
+for (var j = 0; j <= dots; j++) {
+    const pagination = document.getElementById("pagination");
+    const dott = document.createElement("span");
+    dott.classList.add("dot");
+    pagination.appendChild(dott);
+}
+
+const products = document.querySelector('.products');
+const dotys = document.querySelectorAll('.dot');
+
+let currentPage = 0;
+const productsPerPage = 4;
+
+function showPage(pageIndex) {
+    const startIdx = pageIndex * productsPerPage;
+    const endIdx = startIdx + productsPerPage;
+
+    const allProducts = Array.from(products.children);
+    allProducts.forEach((product, index) => {
+        if (index >= startIdx && index < endIdx) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+}
+
+dotys.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentPage = index;
+        showPage(currentPage);
+        updateActiveDot();
+    });
+});
+
+function updateActiveDot() {
+    dotys.forEach((dot, index) => {
+        if (index === currentPage) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+showPage(currentPage);
+updateActiveDot();

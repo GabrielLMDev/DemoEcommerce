@@ -1,0 +1,31 @@
+.catalog {
+    width: 100%;
+    /* Ajusta el ancho según tus necesidades */
+    margin: 0 auto;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pagination {
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="Tooplate">
+
+    <title>Demo Tienda E-commmerce - GabrielLM Dev</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/tooplate-moso-interior.css" rel="stylesheet">
+    <link href="css/list-product.css" rel="stylesheet">
+
+</head>
+
+<body class="shop-listing-page">
+
+    <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
+        <div class="container">
+            <img src="assets/images/LogoWBG.png" style="width: 4.5%;">
+            <a class="navbar-brand" href="index.html">Demo E<span class="tooplate-secondary">-</span><span
+                    class="tooplate-custom">commmerce</span></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="index.html">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="shop-listing.html">Catálogo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <header class="site-header d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-12">
+                        <h1 class="text-white">Catalogo</h1>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <section class="shop-section section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-5 col-12 me-auto mb-5">
+                        <form class="custom-form filter-form" action="#" method="get" role="form">
+                            <div class="mt-4">
+                                <h6 class="filter-form-small-title">Rango de precio</h6>
+
+                                <div class="form-check">
+                                    <input name="price-range[]" type="checkbox" class="form-check-input"
+                                        id="PriceCheckOne" value="500" checked>
+
+                                    <label class="form-check-label" for="PriceCheckOne">menos de $1,000</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input name="price-range[]" type="checkbox" class="form-check-input"
+                                        id="PriceCheckTwo" value="1000">
+
+                                    <label class="form-check-label" for="PriceCheckTwo">$1,000 - $4,900</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input name="price-range[]" type="checkbox" class="form-check-input"
+                                        id="PriceCheckTwo" value="5000">
+
+                                    <label class="form-check-label" for="PriceCheckTwo">$5,000 - $9,900</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input name="price-range[]" type="checkbox" class="form-check-input"
+                                        id="PriceCheckThree" value="10000">
+
+                                    <label class="form-check-label" for="PriceCheckThree">$10,000 - $30,000</label>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <h6 class="filter-form-small-title">Condicion</h6>
+
+                                <div class="form-check">
+                                    <input name="condition[]" type="checkbox" class="form-check-input"
+                                        id="ConditionCheckOne" value="all" checked>
+
+                                    <label class="form-check-label" for="ConditionCheckOne">Todo</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input name="condition[]" type="checkbox" class="form-check-input"
+                                        id="ConditionCheckTwo" value="excellent">
+
+                                    <label class="form-check-label" for="ConditionCheckTwo">Excelente</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input name="condition[]" type="checkbox" class="form-check-input"
+                                        id="ConditionCheckThree" value="better">
+
+                                    <label class="form-check-label" for="ConditionCheckThree">Regular</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input name="condition[]" type="checkbox" class="form-check-input"
+                                        id="ConditionCheckFour" value="good">
+
+                                    <label class="form-check-label" for="ConditionCheckFour">Buena</label>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <h6 class="filter-form-small-title">Tipo</h6>
+
+                                <div class="form-check">
+                                    <input name="condition[]" type="checkbox" class="form-check-input" id="TypeCheckOne"
+                                        value="" checked>
+
+                                    <label class="form-check-label" for="TypeCheckOne">Grande</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input name="condition[]" type="checkbox" class="form-check-input" id="TypeCheckTwo"
+                                        value="">
+
+                                    <label class="form-check-label" for="TypeCheckTwo">Pequeño</label>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <button type="submit" class="form-control">Aplicar filtros</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-7 col-md-6 col-12">
+                        <h2>Productos</h2>
+                        <p class="mb-5"><strong><span id="total"></span></strong> estan disponibles.</p>
+                        <div class="catalog">
+                            <div class="products" id="products">
+                            </div>
+                            <div class="pagination" id="pagination">
+                                <span class="dot active"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" style="margin-top: 30px;">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-md-5 col-12 mb-3">
+                    <h3><a href="index.html" class="custom-link mb-1">Demo E-commerce</a></h3>
+
+                    <p class="text-white">Julio 2023, Adaptado por: <a class="text-white"
+                            href="https://www.gabriellmdev.com/" target="_blank">GabrielLMDev</a>
+                    </p>
+                    <p class="text-white">Template By Tooplate: <a class="text-white" href="https://www.tooplate.com/"
+                            target="_blank">Tooplate.com</a>
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 ms-lg-auto mb-3">
+                    <h3 class="text-white mb-3">Tienda</h3>
+
+                    <p class="text-white mt-2">
+                        <i class="bi-geo-alt"></i>
+                        México, México
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 ms-lg-auto mb-3">
+                    <h3 class="text-white mb-3">Conócenos</h3>
+                    <p class="text-white"><a class="text-white" href="#" target="_self">Politicas de Privacidad</a>
+                    </p>
+                    <p class="text-white"><a class="text-white" href="#" target="_self">Acerca de nosotros</a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-12 mb-3">
+                    <h3 class="text-white mb-3">Contáctanos</h3>
+
+                    <p class="text-white mb-1">
+                        <i class="bi-telephone me-1"></i>
+
+                        <a href="tel: +52-55-47608999" class="text-white">
+                            +52-55-47608999
+                        </a>
+                    </p>
+
+                    <p class="text-white mb-0">
+                        <i class="bi-envelope me-1"></i>
+
+                        <a href="mailto:gabriellm.contacto@gmail.com" class="text-white">
+                            gabriellm.contacto
+                        </a>
+                    </p>
+                </div>
+
+                <div>
+                    <p class="copyright-text mb-0 me-4">Copyright © Demo E-commerce 2023</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script type="module" src="js/list-shop.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>
