@@ -53,7 +53,7 @@ querySnapshot.forEach((doc) => {
     if (doc.data().estatus === true) {
         hijo.innerHTML = '<div class="shop-thumb">' +
             '<div class="shop-image-wrap">' +
-            '<a href="shop-detail.html?' + doc.id + '">' +
+            '<a href="shop-detail.html?product=' + doc.id + '">' +
             '<img src="" class="shop-image img-fluid" alt="' + doc.id + '" id="' + doc.id + '">' +
             '</a>' +
             '<div class="shop-icons-wrap">' +
@@ -68,7 +68,7 @@ querySnapshot.forEach((doc) => {
             '<h4 class="shop-body-text">' + doc.data().nombre + '</h4>' +
             '</div>' +
             '<div class="shop-btn-wrap">' +
-            '<a href="shop-detail.html?' + doc.id + '"' +
+            '<a href="shop-detail.html?product=' + doc.id + '"' +
             'class="shop-btn custom-btn btn d-flex align-items-center align-items-center">Ver más</a>' +
             '</div>' +
             '</div >' +
@@ -77,7 +77,7 @@ querySnapshot.forEach((doc) => {
     } else {
         hijo.innerHTML = '<div class="shop-thumb">' +
             '<div class="shop-image-wrap">' +
-            '<a href="shop-detail.html?' + doc.id + '">' +
+            '<a href="shop-detail.html?product=' + doc.id + '">' +
             '<img src="" class="shop-image img-fluid" alt="' + doc.id + '" id="' + doc.id + '">' +
             '</a>' +
             '<div class="shop-icons-wrap">' +
@@ -92,7 +92,7 @@ querySnapshot.forEach((doc) => {
             '<h4 class="shop-body-text">' + doc.data().nombre + '</h4>' +
             '</div>' +
             '<div class="shop-btn-wrap">' +
-            '<a href="shop-detail.html?' + doc.id + '"' +
+            '<a href="shop-detail.html?product=' + doc.id + '"' +
             'class="shop-btn custom-btn btn d-flex align-items-center align-items-center" style="font-size: 12px;">Agotado</a>' +
             '</div>' +
             '</div >' +
