@@ -50,6 +50,11 @@ querySnapshot.forEach((doc) => {
         .catch((error) => {
             console.log(error);
         });
+    var formatoPesos = new Intl.NumberFormat('es-MX', {
+        style: 'currency',
+        currency: 'MXN'
+    });
+    var numeroFormateado = formatoPesos.format(doc.data().precio);
     if (doc.data().estatus === true) {
         hijo.innerHTML = '<div class="shop-thumb">' +
             '<div class="shop-image-wrap">' +
@@ -61,7 +66,7 @@ querySnapshot.forEach((doc) => {
             '<i class="fas fa-check" style="color: var(--primary-color);"></i>' +
             '</div>' +
             '<p class="shop-pricing mb-0 mt-3">' +
-            '<span class="badge custom-badge">$' + doc.data().precio + '</span>' +
+            '<span class="badge custom-badge">' + numeroFormateado + '</span>' +
             '</p>' +
             '</div>' +
             '<div class="shop-body">' +
@@ -85,7 +90,7 @@ querySnapshot.forEach((doc) => {
             '<i class="fas fa-fire" style="color: var(--primary-color);"></i>' +
             '</div>' +
             '<p class="shop-pricing mb-0 mt-3">' +
-            '<span class="badge custom-badge">$' + doc.data().precio + '</span>' +
+            '<span class="badge custom-badge">' + numeroFormateado + '</span>' +
             '</p>' +
             '</div>' +
             '<div class="shop-body">' +
@@ -147,3 +152,11 @@ function updateActiveDot() {
 
 showPage(currentPage);
 updateActiveDot();
+
+const qr = query(collection(db, "products"), where("estatus", "==", true));
+const qSnapshot = await getDocs(qr)
+    .then(qSnapshot => {
+        const trueCount = qSnapshot.size;
+        var noT = document.getElementById("noTotal");
+        noT.innerHTML = trueCount;
+    })

@@ -54,18 +54,6 @@
 
     <main>
 
-        <header class="site-header d-flex justify-content-center align-items-center">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-12 col-12">
-                        <h1 class="text-white">Detalle del producto</h1>
-                    </div>
-
-                </div>
-            </div>
-        </header>
-
         <section class="shop-detail-bar section-bg">
             <div class="container">
                 <div class="row">
@@ -86,38 +74,33 @@
                         <p class="shop-detail-bar-wrap d-flex flex-wrap ms-lg-5 ms-4 mb-0">
                             <span class="me-2">Fecha de subida:</span>
 
-                            <strong><span id="date"></span></strong>
+                            <strong class="shop-condition-text"><span id="date"></span></strong>
                         </p>
                     </div>
 
                     <div
                         class="col-lg-5 col-md-4 col-12 social-share d-flex align-items-center ms-lg-auto mt-3 mt-lg-0 mt-md-0">
-                        <p class="mb-0 me-3 ms-lg-auto ms-md-auto">Share:</p>
-
+                        <p class="mb-0 me-3 ms-lg-auto ms-md-auto">Pregunta por este producto:</p>
                         <ul class="social-icon">
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link social-icon-twitter bi-twitter"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link social-icon-facebook bi-facebook"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link social-icon-pinterest bi-pinterest"></a>
-                            </li>
+                            <a href="tel: +52-55-47608999">
+                                <i class="bi-telephone me-1"></i>
+                            </a>
+                            <a href="mailto:gabriellm.contacto@gmail.com">
+                                <i class="bi-envelope me-1"></i>
+                            </a>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="shop-detail-section section-padding">
-            <div class="container">
+        <section class="shop-detail-section" style="margin-top: 55px; margin-bottom: 55px;">
+            <div class="container" style="padding-top: 10px;">
                 <div class="row">
 
                     <div class="col-lg-6 col-12 m-auto">
                         <div class="custom-block shop-detail-custom-block">
+                            <small class="section-small-title"><span id="clave"></span></small>
                             <h3 class="mb-3" id="name"></h3>
 
                             <p id="description" style="text-align: justify;"></p>

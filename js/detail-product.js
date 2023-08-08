@@ -26,6 +26,8 @@ if (docSnap.exists()) {
         style: 'currency',
         currency: 'MXN'
     });
+    var idProduct = document.getElementById("clave");
+    idProduct.innerHTML = parametro;
     var price = document.getElementById("price");
     var numeroFormateado = formatoPesos.format(docSnap.data().precio);
     price.innerHTML = numeroFormateado;
@@ -35,8 +37,12 @@ if (docSnap.exists()) {
     } else {
         status.innerHTML = "AGOTADO";
     }
-    var date = document.getElementById("date");
-    date.innerHTML = "fechaFormateada";
+    const dateT = docSnap.data().fecha;
+    const date = new Date(dateT.seconds * 1000 + Math.floor(dateT.nanoseconds / 1000000));
+    const formattedDate = formatDate(date);
+    var fecha = document.getElementById("date");
+    fecha.innerHTML = formattedDate;
+    
     var name = document.getElementById("name");
     name.innerHTML = docSnap.data().nombre;
     var des = document.getElementById("description");
@@ -65,3 +71,9 @@ if (docSnap.exists()) {
     // docSnap.data() will be undefined in this case
     console.log("No such document!");
 }
+function formatDate(date) {
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  }
