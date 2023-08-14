@@ -18,7 +18,7 @@ const productsRef = collection(db, "products");
 
 //const q = query(collection(db, "products"), where("estatus", "==", true)); / DISPONIBLES
 //const q = query(productsRef, orderBy("fecha", "desc"), limit(3)); // ASCENDENTE
-const q = query(productsRef, orderBy("fecha","desc"), limit(6));
+const q = query(productsRef, orderBy("fecha", "desc"), limit(6));
 const querySnapshot = await getDocs(q);
 querySnapshot.forEach((doc) => {
 
@@ -44,11 +44,11 @@ querySnapshot.forEach((doc) => {
         .catch((error) => {
             console.log(error);
         });
-        var formatoPesos = new Intl.NumberFormat('es-MX', {
-            style: 'currency',
-            currency: 'MXN'
-        });
-        var numeroFormateado = formatoPesos.format(doc.data().precio);
+    var formatoPesos = new Intl.NumberFormat('es-MX', {
+        style: 'currency',
+        currency: 'MXN'
+    });
+    var numeroFormateado = formatoPesos.format(doc.data().precio);
     if (doc.data().estatus === true) {
         hijo.innerHTML = '<div class="shop-thumb">' +
             '<div class="shop-image-wrap">' +
