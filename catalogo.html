@@ -16,7 +16,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link href="fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Font-Awesome/css/all.css" rel="stylesheet" type="text/css">
+    <link href="Font-Awesome/css/brands.css" rel="stylesheet" type="text/css">
+    <link href="Font-Awesome/css/fontawesome.css" rel="stylesheet" type="text/css">
+    <link href="Font-Awesome/css/regular.css" rel="stylesheet" type="text/css">
+    <link href="Font-Awesome/css/solid.css" rel="stylesheet" type="text/css">
+    <link href="Font-Awesome/css/svg-with-js.css" rel="stylesheet" type="text/css">
+    <link href="Font-Awesome/css/v4-font-face.css" rel="stylesheet" type="text/css">
+    <link href="Font-Awesome/css/v4-shims.css" rel="stylesheet" type="text/css">
+    <link href="Font-Awesome/css/v5-font-face.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-icons.css" rel="stylesheet">
     <link href="css/owl.carousel.min.css" rel="stylesheet">
@@ -85,81 +93,33 @@
                                 <h6 class="filter-form-small-title">Rango de precio</h6>
 
                                 <div class="form-check">
-                                    <input name="price-range[]" type="checkbox" class="form-check-input"
-                                        id="PriceCheckOne" value="500" checked>
-
-                                    <label class="form-check-label" for="PriceCheckOne">menos de $1,000</label>
+                                    <input name="price-range" type="checkbox" class="form-check-input"
+                                        id="more" value="more" checked>
+                                    <label class="form-check-label" for="PriceCheckOne">Mayor precio</label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input name="price-range[]" type="checkbox" class="form-check-input"
-                                        id="PriceCheckTwo" value="1000">
-
-                                    <label class="form-check-label" for="PriceCheckTwo">$1,000 - $4,900</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input name="price-range[]" type="checkbox" class="form-check-input"
-                                        id="PriceCheckTwo" value="5000">
-
-                                    <label class="form-check-label" for="PriceCheckTwo">$5,000 - $9,900</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input name="price-range[]" type="checkbox" class="form-check-input"
-                                        id="PriceCheckThree" value="10000">
-
-                                    <label class="form-check-label" for="PriceCheckThree">$10,000 - $30,000</label>
+                                    <input name="price-range" type="checkbox" class="form-check-input"
+                                        id="less" value="less">
+                                    <label class="form-check-label" for="PriceCheckTwo">Menor precio</label>
                                 </div>
                             </div>
 
                             <div class="mt-4">
-                                <h6 class="filter-form-small-title">Condicion</h6>
+                                <h6 class="filter-form-small-title">Fecha de publicacion</h6>
 
                                 <div class="form-check">
-                                    <input name="condition[]" type="checkbox" class="form-check-input"
-                                        id="ConditionCheckOne" value="all" checked>
+                                    <input name="date" type="checkbox" class="form-check-input"
+                                        id="new" value="new" checked>
 
-                                    <label class="form-check-label" for="ConditionCheckOne">Todo</label>
+                                    <label class="form-check-label" for="ConditionCheckOne">Mas recientes</label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input name="condition[]" type="checkbox" class="form-check-input"
-                                        id="ConditionCheckTwo" value="excellent">
+                                    <input name="date" type="checkbox" class="form-check-input"
+                                        id="old" value="old">
 
-                                    <label class="form-check-label" for="ConditionCheckTwo">Excelente</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input name="condition[]" type="checkbox" class="form-check-input"
-                                        id="ConditionCheckThree" value="better">
-
-                                    <label class="form-check-label" for="ConditionCheckThree">Regular</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input name="condition[]" type="checkbox" class="form-check-input"
-                                        id="ConditionCheckFour" value="good">
-
-                                    <label class="form-check-label" for="ConditionCheckFour">Buena</label>
-                                </div>
-                            </div>
-
-                            <div class="mt-4">
-                                <h6 class="filter-form-small-title">Tipo</h6>
-
-                                <div class="form-check">
-                                    <input name="condition[]" type="checkbox" class="form-check-input" id="TypeCheckOne"
-                                        value="" checked>
-
-                                    <label class="form-check-label" for="TypeCheckOne">Grande</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input name="condition[]" type="checkbox" class="form-check-input" id="TypeCheckTwo"
-                                        value="">
-
-                                    <label class="form-check-label" for="TypeCheckTwo">Pequeño</label>
+                                    <label class="form-check-label" for="ConditionCheckTwo">Mas antigüos</label>
                                 </div>
                             </div>
 
@@ -173,7 +133,7 @@
                         <h2>Productos</h2>
                         <p class="mb-5"><strong><span id="noTotal"></span> de <span id="total"></span></strong> estan
                             disponibles.</p>
-                        <div class="catalog">
+                        <div class="catalog" style="display: grid; place-items: center;">
                             <div class="products" id="products">
                             </div>
                             <div class="pagination" id="pagination">
@@ -194,11 +154,8 @@
                 <div class="col-lg-3 col-md-5 col-12 mb-3">
                     <h3><a href="index.html" class="custom-link mb-1">Demo E-commerce</a></h3>
 
-                    <p class="text-white">Julio 2023, Adaptado por: <a class="text-white"
-                            href="https://www.gabriellmdev.com/" target="_blank">GabrielLMDev</a>
-                    </p>
-                    <p class="text-white">Template By Tooplate: <a class="text-white" href="https://www.tooplate.com/"
-                            target="_blank">Tooplate.com</a>
+                    <p class="text-white">Julio 2023, By<a class="text-white" href="https://www.gabriellmdev.com/"
+                            target="_blank">GabrielLMDev</a>
                     </p>
                 </div>
                 <div class="col-lg-3 col-md-3 col-12 ms-lg-auto mb-3">
@@ -239,6 +196,9 @@
 
                 <div>
                     <p class="copyright-text mb-0 me-4">Copyright © Demo E-commerce 2023</p>
+                    <p class="copyright-text">Template: <a class="text-white" href="https://www.tooplate.com/"
+                            target="_blank">Tooplate.com</a>
+                    </p>
                 </div>
 
             </div>

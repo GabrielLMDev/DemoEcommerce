@@ -3,7 +3,7 @@
   --primary-color: #1877f2;
   --secondary-color: #6aa3db;
   --section-bg-color: #f9f9f9;
-  --site-footer-bg-color: #36363e;
+  --site-footer-bg-color: #0f0f0f;
   --custom-btn-bg-color: #3695b0;
   --dark-color: #000000;
   --p-color: #0f0f0f;
@@ -944,7 +944,7 @@ strong {
 .copyright-text {
   color: var(--section-bg-color);
   font-size: var(--copyright-font-size);
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .site-footer .social-icon-link {

@@ -87,7 +87,7 @@ querySnapshot.forEach((doc) => {
             '</a>' +
             '<div class="shop-icons-wrap">' +
             '<div class="shop-icons d-flex flex-column align-items-center">' +
-            '<i class="fas fa-fire" style="color: var(--primary-color);"></i>' +
+            '<i class="fa-regular fa-circle-xmark" style="color: var(--primary-color);"></i>' +
             '</div>' +
             '<p class="shop-pricing mb-0 mt-3">' +
             '<span class="badge custom-badge">' + numeroFormateado + '</span>' +
